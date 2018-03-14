@@ -126,9 +126,9 @@ module.exports = function () {
             });
         },
         deleteOneMovie: function(movieTitle, callback) {
-            Movie.findOne({movieName: movieTitle}).exec(function (err, results) {
+            Movie.findOne({title: movieTitle}).exec(function (err, results) {
                 if (results !== null) {
-                    Movie.remove({movieName: movieTitle}).exec(function (err) {
+                    Movie.remove({title: movieTitle}).exec(function (err) {
                         callback({message: "Movie deleted."});
                     });
                 }
