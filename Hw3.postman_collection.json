@@ -1,0 +1,493 @@
+{
+	"info": {
+		"name": "Hw3",
+		"_postman_id": "f4d9dedd-1fa1-4c46-97cf-9b9dd350f2f5",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": " https://frozen-ridge-75647.herokuapp.com/signin",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "44441009-9b66-477c-a151-af1d9dfd1766",
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData= JSON.parse(responseBody);",
+							"var jwt= jsonData.token;",
+							"pm.environment.set(\"JWT\",jwt);"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer{{JWT}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"username\":\"hiiii\",\n \"password\":\"345\"\n\n}"
+				},
+				"url": {
+					"raw": "https://frozen-ridge-75647.herokuapp.com/signin",
+					"protocol": "https",
+					"host": [
+						"frozen-ridge-75647",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"signin"
+					]
+				},
+				"description": "Sign in and passing a JWT token in the environment variable."
+			},
+			"response": []
+		},
+		{
+			"name": " https://frozen-ridge-75647.herokuapp.com/signup",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "44441009-9b66-477c-a151-af1d9dfd1766",
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData= JSON.parse(responseBody);",
+							"var jwt= jsonData.token;",
+							"pm.environment.set(\"JWT\",jwt);"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer{{JWT}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\":\"Postman\",\n\t\"password\":\"12345\"\n\t\n\t\n}"
+				},
+				"url": {
+					"raw": "https://frozen-ridge-75647.herokuapp.com/signup",
+					"protocol": "https",
+					"host": [
+						"frozen-ridge-75647",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"signup"
+					]
+				},
+				"description": "Sign up a new User "
+			},
+			"response": []
+		},
+		{
+			"name": " https://frozen-ridge-75647.herokuapp.com/signup",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "44441009-9b66-477c-a151-af1d9dfd1766",
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData= JSON.parse(responseBody);",
+							"var jwt= jsonData.token;",
+							"pm.environment.set(\"JWT\",jwt);"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer{{JWT}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\":\"Postman\",\n\t\"password\":\"12345\"\n\t\n\t\n}"
+				},
+				"url": {
+					"raw": "https://frozen-ridge-75647.herokuapp.com/signup",
+					"protocol": "https",
+					"host": [
+						"frozen-ridge-75647",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"signup"
+					]
+				},
+				"description": "Sign up an existing new User "
+			},
+			"response": []
+		},
+		{
+			"name": " https://frozen-ridge-75647.herokuapp.com/saveMovies",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3e19ca9b-3c10-470a-8a97-6b5b27e0f5ae",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer{{JWT}}",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n \"title\": \"AYESHA IS AWESOMEEEEEE\",\r\n \"YearReleased\": \"2008\",\r\n \"genre\": \"Action\",\r\n \"actors\": \r\n [\r\n  {\r\n   \"ActorName\": \"AYESHA PERWAIZ\", \r\n   \"CharacterName\": \"Bryan Mills\"\r\n  },\r\n  \r\n  {\r\n   \"ActorName\": \"Maggie Grace\", \r\n   \"CharacterName\": \"Kim\"\r\n  },\r\n \r\n  {\r\n   \"ActorName\": \"Leland Orser\", \r\n   \"CharacterName\": \"Sam\"\r\n  }\r\n ]\r\n}"
+				},
+				"url": {
+					"raw": "https://frozen-ridge-75647.herokuapp.com/saveMovies",
+					"protocol": "https",
+					"host": [
+						"frozen-ridge-75647",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"saveMovies"
+					]
+				},
+				"description": "Doesn't save movie because movie already exists"
+			},
+			"response": []
+		},
+		{
+			"name": " https://frozen-ridge-75647.herokuapp.com/saveMovies",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3e19ca9b-3c10-470a-8a97-6b5b27e0f5ae",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer{{JWT}}",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n \"title\": \"AYESHA IS AWESOMEEEEEE\",\r\n \"YearReleased\": \"2008\",\r\n \"genre\": \"Action\",\r\n \"actors\": \r\n [\r\n \r\n  {\r\n   \"ActorName\": \"Maggie Grace\", \r\n   \"CharacterName\": \"Kim\"\r\n  },\r\n \r\n  {\r\n   \"ActorName\": \"Leland Orser\", \r\n   \"CharacterName\": \"Sam\"\r\n  }\r\n ]\r\n}"
+				},
+				"url": {
+					"raw": "https://frozen-ridge-75647.herokuapp.com/saveMovies",
+					"protocol": "https",
+					"host": [
+						"frozen-ridge-75647",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"saveMovies"
+					]
+				},
+				"description": "Doesn't save movie because movie doesn't have 3 actors"
+			},
+			"response": []
+		},
+		{
+			"name": " https://frozen-ridge-75647.herokuapp.com/saveMovies",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3e19ca9b-3c10-470a-8a97-6b5b27e0f5ae",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer{{JWT}}",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n \"title\": \"Hobbit\",\r\n \"YearReleased\": \"2008\",\r\n \"genre\": \"Action\",\r\n \"actors\": \r\n [\r\n  {\r\n   \"ActorName\": \"AYESHA PERWAIZ\", \r\n   \"CharacterName\": \"Bryan Mills\"\r\n  },\r\n  \r\n  {\r\n   \"ActorName\": \"Maggie Grace\", \r\n   \"CharacterName\": \"Kim\"\r\n  },\r\n \r\n  {\r\n   \"ActorName\": \"Leland Orser\", \r\n   \"CharacterName\": \"Sam\"\r\n  }\r\n ]\r\n}"
+				},
+				"url": {
+					"raw": "https://frozen-ridge-75647.herokuapp.com/saveMovies",
+					"protocol": "https",
+					"host": [
+						"frozen-ridge-75647",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"saveMovies"
+					]
+				},
+				"description": "Save Movie"
+			},
+			"response": []
+		},
+		{
+			"name": " https://frozen-ridge-75647.herokuapp.com/movies",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "237904e6-caac-4af0-a802-fd00687231f2",
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData= JSON.parse(responseBody);",
+							"var jwt= jsonData.token;",
+							"pm.environment.set(\"JWT\",jwt);"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer{{JWT}}",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n \"title\": \"Hobbit\",\r\n \"YearReleased\": \"2008\",\r\n \"genre\": \"Action\",\r\n \"actors\": \r\n [\r\n  {\r\n   \"ActorName\": \"AYESHA PERWAIZ\", \r\n   \"CharacterName\": \"Bryan Mills\"\r\n  },\r\n  \r\n  {\r\n   \"ActorName\": \"Maggie Grace\", \r\n   \"CharacterName\": \"Kim\"\r\n  },\r\n \r\n  {\r\n   \"ActorName\": \"Leland Orser\", \r\n   \"CharacterName\": \"Sam\"\r\n  }\r\n ]\r\n}"
+				},
+				"url": {
+					"raw": "https://frozen-ridge-75647.herokuapp.com/movies",
+					"protocol": "https",
+					"host": [
+						"frozen-ridge-75647",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"movies"
+					]
+				},
+				"description": "Get all movies in database"
+			},
+			"response": []
+		},
+		{
+			"name": " https://frozen-ridge-75647.herokuapp.com/update/taken",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "237904e6-caac-4af0-a802-fd00687231f2",
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData= JSON.parse(responseBody);",
+							"var jwt= jsonData.token;",
+							"pm.environment.set(\"JWT\",jwt);"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer{{JWT}}",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n \"title\": \"Hobbit\",\r\n \"YearReleased\": \"2008\",\r\n \"genre\": \"Action\",\r\n \"actors\": \r\n [\r\n  {\r\n   \"ActorName\": \"AYESHA PERWAIZ\", \r\n   \"CharacterName\": \"Bryan Mills\"\r\n  },\r\n  \r\n  {\r\n   \"ActorName\": \"Maggie Grace\", \r\n   \"CharacterName\": \"Kim\"\r\n  },\r\n \r\n  {\r\n   \"ActorName\": \"Leland Orser\", \r\n   \"CharacterName\": \"Sam\"\r\n  }\r\n ]\r\n}"
+				},
+				"url": {
+					"raw": "https://frozen-ridge-75647.herokuapp.com/update/taken",
+					"protocol": "https",
+					"host": [
+						"frozen-ridge-75647",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"update",
+						"taken"
+					]
+				},
+				"description": "Update a movie"
+			},
+			"response": []
+		},
+		{
+			"name": " https://frozen-ridge-75647.herokuapp.com/deleteMovie/A",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "237904e6-caac-4af0-a802-fd00687231f2",
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData= JSON.parse(responseBody);",
+							"var jwt= jsonData.token;",
+							"pm.environment.set(\"JWT\",jwt);"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer{{JWT}}",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://frozen-ridge-75647.herokuapp.com/deleteMovie/A",
+					"protocol": "https",
+					"host": [
+						"frozen-ridge-75647",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"deleteMovie",
+						"A"
+					]
+				},
+				"description": "Delete a movie"
+			},
+			"response": []
+		},
+		{
+			"name": " https://frozen-ridge-75647.herokuapp.com/signup",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "237904e6-caac-4af0-a802-fd00687231f2",
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData= JSON.parse(responseBody);",
+							"var jwt= jsonData.token;",
+							"pm.environment.set(\"JWT\",jwt);"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer{{JWT}}",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"username\":\"NghiPHAN\",\r\n\t\"password\":\"123456\"\r\n}"
+				},
+				"url": {
+					"raw": "https://frozen-ridge-75647.herokuapp.com/signup",
+					"protocol": "https",
+					"host": [
+						"frozen-ridge-75647",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"signup"
+					]
+				},
+				"description": "Sign up a user failed, user already exisit"
+			},
+			"response": []
+		}
+	]
+}
